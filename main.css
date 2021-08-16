@@ -1,0 +1,228 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100vh;
+    width: 100vh;
+    transform: translate(-50%,-50%);
+    transform-style: preserve-3d;
+    animation: drive 6s linear infinite;
+}
+
+.head {
+    position: absolute;
+    top: 275px;
+    right: 65px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(142, 212, 38);
+}
+
+.hand {
+    position: absolute;
+    background-color: rgb(142, 212, 38);
+    width: 100px;
+    right: 41px;
+    top: 350px;
+    transform: rotate(45deg);
+    height: 30px;
+}
+
+.body {
+    position: absolute;
+    background-color: rgb(142, 212, 38);
+    width: 80px;
+    height: 30px;
+    top: 348px;
+    right: 98px;
+    transform: rotate(-45deg);
+}
+
+.hip {
+    position: absolute;
+    width: 30px;
+    left: 623px;
+    height: 90px;
+    background-color: rgb(142, 212, 38);
+    transform: rotate(-45deg);
+    top: 377px;
+}
+
+.foot {
+    position: absolute;
+    width: 30px;
+    height: 70px;
+    top: 431px;
+    left: 620px;
+    background-color: rgb(142, 212, 38);
+    transform: rotate(45deg);
+    z-index: 2;
+}
+
+.left_tyre {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    top: 410px;
+    border-radius: 50%;
+    left: 490px;
+    background-color: rgb(142, 212, 38);
+}
+
+.left_tyre::before {
+    content: "";
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+    background-color: #000;
+    position: absolute;
+}
+
+.left_circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(142, 212, 38);
+    top: 470px;
+    left: 555px;
+    z-index: 3;
+}
+
+.left_circle::before {
+    content: "";
+    position: absolute;
+    animation: animaone 1s linear infinite;
+    width: 1.5px;
+    height: 90px;
+    top: -35px;
+    transform: rotate(-30deg);
+    left: 8px;
+    z-index: 1;
+    background-color: rgb(142, 212, 38);
+}
+
+.left_circle::after {
+    content: "";
+    position: absolute;
+    width: 1.5px;
+    height: 90px;
+    z-index: 2;
+    animation: animatwo 1s linear infinite;
+    top: -35px;
+    left: 10px;
+    transform: rotate(60deg);
+    background-color: rgb(94, 151, 9);
+}
+
+.right_tyre {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    top: 405px;
+    border-radius: 50%;
+    left: 705px;
+    background-color: rgb(142, 212, 38);
+}
+
+.right_tyre::before {
+    content: "";
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+    background-color: #000;
+    position: absolute;
+}
+.right_circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(142, 212, 38);
+    top: 465px;
+    left: 765px;
+}
+
+.right_circle::before {
+    content: "";
+    position: absolute;
+    width: 1.5px;
+    height: 90px;
+    top: -35px;
+    transform: rotate(-30deg);
+    animation: animone 1s linear infinite;
+    left: 8px;
+    z-index: 1;
+    background-color: rgb(94, 151, 9);
+}
+
+.right_circle::after {
+    content: "";
+    position: absolute;
+    width: 1.5px;
+    height: 90px;
+    top: -35px;
+    left: 10px;
+    transform: rotate(60deg);
+    animation: animtwo 1s linear infinite;
+    background-color: rgb(94, 151, 9);
+}
+
+@keyframes animone {
+    0%  {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+@keyframes animtwo {
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(270deg);
+    }
+}
+ 
+@keyframes animaone {
+    0%  {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+@keyframes animatwo {
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(270deg);
+    }
+}
+
+  @keyframes drive {
+    0% {
+        transform: translate(-160%,-50%);
+    }
+    100% {
+        transform: translate(35%,-50%);
+    }
+} 
